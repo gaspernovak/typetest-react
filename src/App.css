@@ -2,9 +2,15 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.Word-error {
+  color: lightcoral;
+}
+
+
 .Wordlist {
   padding: 15px;
   width: 500px;
+  height: 150px;
   margin: auto;
   margin-top: 10%;
   color:antiquewhite;
