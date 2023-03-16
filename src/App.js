@@ -5,16 +5,22 @@ import axios from "axios"
 function App() {
 
   const [words, setWords] = useState([]);
-  const [word, setWord] = useState("")
-
   function handleChange(event){
-    if(event.target.value == words[0] + " "){
+    let etv = event.target
+    
+    if(etv.value == words[0] + " "){
       let temp = words.slice(1);
       setWords(temp) 
-      event.target.value = ''
+      etv.value = ''
     }
 
-    console.log(event.target.value.lenght)
+    let word = words[0].match(etv.value)
+    var word_element = document.getElementById(0)
+    if(word != etv.value){
+      word_element.classList.add("Word-error")
+    } else {
+      word_element.classList.remove("Word-error")
+    }
   }
 
   useEffect(() => {
@@ -29,7 +35,7 @@ function App() {
         <p>
           {words &&
             words.map((word, key) =>
-              <span key={key}>{word} </span> 
+              <span className id={key} key={key}>{word} </span> 
             )
           }
         </p>
