@@ -1,9 +1,8 @@
-import './App.css';
+import './Typetest.css';
 import React, { useEffect, useState } from "react";
 import axios from "axios"
 
-function App() {
-
+function Typetest() {
   const [words, setWords] = useState([]);
   function handleChange(event){
     let etv = event.target
@@ -30,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App" >
+    <div>
       <div className="Wordlist">
         <p>
           {words &&
@@ -45,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default Typetest;
