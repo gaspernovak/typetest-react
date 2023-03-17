@@ -7,11 +7,21 @@ function Typetest() {
   
   const [counter, setCounter] = useState(0);
 
+  function detectError(input, correctInput, wordElement){
+    let match = correctInput.match(input)
+    if (match != input) {
+      wordElement.classList.add("Word-error")
+    } else {
+      wordElement.classList.remove("Word-error")
+    }
+  }
+
   function handleChange(event) {
+    let etv = event.target
+
     if (counter == 0){
       setCounter(30)
     }
-    let etv = event.target
 
     if (etv.value == words[0] + " ") {
       let temp = words.slice(1);
@@ -19,13 +29,8 @@ function Typetest() {
       etv.value = ''
     }
 
-    let word = words[0].match(etv.value)
-    var word_element = document.getElementById(0)
-    if (word != etv.value) {
-      word_element.classList.add("Word-error")
-    } else {
-      word_element.classList.remove("Word-error")
-    }
+    detectError(etv.value, words[0], document.getElementById(0))
+
   }
 
   useEffect(() => {
@@ -34,7 +39,7 @@ function Typetest() {
     });
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer =
       counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
     return () => clearInterval(timer);
