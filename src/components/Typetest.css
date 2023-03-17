@@ -1,26 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.Timer {
+  font-size: xx-large;
+  text-align: center;
+}
+
+
 .Word-error {
   color: lightcoral;
 }
 
+.Word-input {
+  color: antiquewhite;
+  border-radius: 4px;
+  background-color: #373d48;
+  font-family: 'Roboto Mono', cursive;
+  padding: 0 4px 0 4px;
+}
+
 .Wordlist {
   padding: 15px;
-  width: 500px;
-  height: 150px;
+  width: 500px; 
   margin: auto;
   margin-top: 10%;
   color: antiquewhite;
   background-color: #282c34;
   border-radius: 4px;
-  text-align: start;
-}
-
-.Wordlist-input {
-  width: 100%;
+  text-align: justify;
 }
 
 p {
+  border-radius: 4px;
+  background-color: #373d48;
+  padding: 5px;
   font-family: 'Roboto Mono', cursive;
+}
+
+input:focus {
+  text-align: center;
+  outline: none;
 }
