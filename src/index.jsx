@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import Typetest from './components/Typetest';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Leaderboard from './components/Leaderboard';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
+  // <React.StrictMode
+  <>
     <Typetest />
+    <Leaderboard />
+  </>
   // </React.StrictMode>
 );
 
