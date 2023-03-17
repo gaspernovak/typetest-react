@@ -4,7 +4,13 @@ import axios from "axios"
 
 function Typetest() {
   const [words, setWords] = useState([]);
+  
+  const [counter, setCounter] = useState(0);
+
   function handleChange(event) {
+    if (counter == 0){
+      setCounter(30)
+    }
     let etv = event.target
 
     if (etv.value == words[0] + " ") {
@@ -28,17 +34,26 @@ function Typetest() {
     });
   }, []);
 
+  React.useEffect(() => {
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
+
   return (
     <div>
       <div className="Wordlist">
+        <div className='Timer'>
+          {counter ? "00:"+counter : "00:00"}
+        </div>
         <p>
           {words &&
             words.map((word, key) =>
-              <span className id={key} key={key}>{word} </span>
+              <span className="Word" id={key} key={key}>{word} </span>
             )
           }
         </p>
-        <input className="input w-100" onChange={handleChange} />
+        <input autoFocus className="w-100 Word-input" onChange={handleChange} />
       </div>
     </div>
   );
