@@ -2,8 +2,10 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 .Timer {
-  font-size: xx-large;
+  font-size: x-large;
   text-align: center;
+  padding: 5px;
+  font-family: 'Roboto Mono', cursive;
 }
 
 
