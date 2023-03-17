@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.Leaderboard {
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    color: antiquewhite;
+    border-radius: 4px;
+    text-align: start;
+    font-family: 'Roboto Mono', cursive;
+}
+
+.Leaderboard-title {
+    background-color: antiquewhite;
+}
