@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-.Timer {
+.Wpm {
+  margin: auto;
+  text-align: center;
+  font-size: x-large;
+  font-family: 'Roboto Mono', cursive;
+  margin-top: 5%;
+}
 
+.Timer {
   font-size: x-large;
   text-align: center;
   padding: 0 0 10px 0 ;
@@ -26,14 +33,14 @@
   padding: 15px;
   width: 500px; 
   margin: auto;
-  margin-top: 10%;
+  margin-top: 30px;
   color: antiquewhite;
   background-color: #282c34;
   border-radius: 4px;
   text-align: justify;
 }
 
-p {
+.Wordlist p {
   border-radius: 4px;
   background-color: #373d48;
   padding: 5px;
