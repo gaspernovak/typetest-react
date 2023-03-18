@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Leaderboard.css';
+import axios from 'axios';
 const Leaderboard = () => {
+
+    const [records, setRecords] = useState([])
+
+    useEffect(() => {
+        axios.get("http://localhost:8090/api/collections/leaderboard/records?sort=-wpm,id").then((data) => {
+            console.log(data.data.items)
+            setRecords(data.data.items);
+        });
+    }, []);
+
     return (
         <div className='Leaderboard'>
             <table class="table">
@@ -13,24 +24,17 @@ const Leaderboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>foobar99</td>
-                        <td>11 jan 2023 19:07</td>
-                        <td>177</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>mgradic</td>
-                        <td>2 feb 2023 16:44</td>
-                        <td>143</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>vojko2</td>
-                        <td>5 oct 2022 9:32</td>
-                        <td>88</td>
-                    </tr>
+                    {records &&
+                        records.map(item => (
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{item.username}</td>
+                                <td>{item.time}</td>
+                                <td>{item.wpm}</td>
+                            </tr>
+                        ))
+                    }
+
                 </tbody>
             </table>
         </div>
