@@ -22,10 +22,11 @@ function Typetest() {
   const [wpm, setWpm] = useState(0);
   const [entriesCounter, setEntriesCounter] = useState(0);
   const [inputDisabled, setInputDisabled] = useState(false);
+  const [username, setUsername] = useState("foobar");
 
   function handlePostLeaderboard() {
     const record = {
-      "username": "foobar" + Math.floor(Math.random() * 100),
+      "username": username,
       "wpm": wpm
     }
 
@@ -53,7 +54,7 @@ function Typetest() {
       }
     }
 
-    if(counter == 0){
+    if (counter == 0) {
       setWpm(calculateWpm(entriesCounter, (timerValue - counter)))
       setInputDisabled(true)
     }
@@ -65,27 +66,26 @@ function Typetest() {
   useEffect(() => {
     axios.get("http://localhost:8090/api/collections/words/records?perPage=150").then((data) => {
       let words = []
-      data.data.items.forEach(item => 
-        words.push(item.word)  
+      data.data.items.forEach(item =>
+        words.push(item.word)
       )
       setWords(words);
     });
   }, []);
 
   useEffect(() => {
-    const timer = (counter > 0) && setInterval(() => 
+    const timer = (counter > 0) && setInterval(() =>
       setCounter(counter - 1), 1000);
-      return () => (
-        clearInterval(timer)
-      )
-      
+    return () => (
+      clearInterval(timer)
+    )
+
 
   }, [counter]);
 
   return (
     <div>
       <p className='Wpm'> WPM: {wpm} </p>
-      <button onClick={handlePostLeaderboard}> submit </button>
       <div className="Wordlist">
         <div className='Timer'>
           {counter ? "00:" + counter : "00:00"}
@@ -98,6 +98,11 @@ function Typetest() {
           }
         </p>
         <input autoFocus className="w-100 Word-input" onChange={handleChange} disabled={inputDisabled} />
+      </div>
+
+      <div className='Score-submit'>
+        <input onChange={(event) => setUsername(event.target.value)} placeholder='username' required/>
+        <input value='Submit score' type="submit" onClick={handlePostLeaderboard}/>
       </div>
     </div>
   );
