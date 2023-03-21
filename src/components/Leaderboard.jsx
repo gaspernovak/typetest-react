@@ -7,7 +7,6 @@ const Leaderboard = () => {
 
     useEffect(() => {
         axios.get("http://localhost:8090/api/collections/leaderboard/records?sort=-wpm,id").then((data) => {
-            console.log(data.data.items)
             setRecords(data.data.items);
         });
     }, []);
@@ -29,7 +28,7 @@ const Leaderboard = () => {
                             <tr>
                                 <th scope="row">1</th>
                                 <td>{item.username}</td>
-                                <td>{item.time}</td>
+                                <td>{item.created}</td>
                                 <td>{item.wpm}</td>
                             </tr>
                         ))
