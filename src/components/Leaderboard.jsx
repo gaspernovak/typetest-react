@@ -13,9 +13,9 @@ const Leaderboard = () => {
 
     return (
         <div className='Leaderboard'>
-            <table class="table">
+            <table className="table">
                 <thead>
-                    <tr>
+                    <tr key="0">
                         <th scope="col">#</th>
                         <th scope="col">name</th>
                         <th scope="col">date</th>
@@ -24,9 +24,9 @@ const Leaderboard = () => {
                 </thead>
                 <tbody>
                     {records &&
-                        records.map(item => (
+                        records.map((item, key) => (
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row" key={key}>1</th>
                                 <td>{item.username}</td>
                                 <td>{item.created}</td>
                                 <td>{item.wpm}</td>
