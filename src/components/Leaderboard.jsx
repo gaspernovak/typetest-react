@@ -15,7 +15,7 @@ const Leaderboard = () => {
         <div className='Leaderboard'>
             <table className="table">
                 <thead>
-                    <tr key="0">
+                    <tr>
                         <th scope="col">#</th>
                         <th scope="col">name</th>
                         <th scope="col">date</th>
@@ -25,8 +25,8 @@ const Leaderboard = () => {
                 <tbody>
                     {records &&
                         records.map((item, key) => (
-                            <tr>
-                                <th scope="row" key={key}>1</th>
+                            <tr key={key}>
+                                <th scope="row">1</th>
                                 <td>{item.username}</td>
                                 <td>{item.created}</td>
                                 <td>{item.wpm}</td>
