@@ -3,14 +3,16 @@
 [http://localhost:3000]
 
 # Running app
-Start the json-server and start the app
+Start pocketbase and app
 
 ## Available Scripts
 In the project directory, you can run:
 
-### `npm start`
+### `pocketbase serve`
+Starts the pocketbase server
+
+### `serve -s build`
+Starts react app in production mode
+
+### `npm run build`
 Runs the app in the development mode on [http://localhost:3000]
-
-### `json-server -p 3001 .\data\db.json`
-The app uses a json-server to simulate an api for testing.
-
