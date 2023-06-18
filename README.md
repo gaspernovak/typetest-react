@@ -39,13 +39,26 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 [http://localhost:3000]
 
 # Running app
+<<<<<<< HEAD
 ### `json-server -p 3001 .\data\db.json`
 The app uses a json-server for api calls
+=======
+Start pocketbase and app
+>>>>>>> 15bbaf0 (Update README.md)
 
 ## Available Scripts
 In the project directory, you can run:
 
-### `npm start`
+### `pocketbase serve`
+Starts the pocketbase server
+
+### `serve -s build`
+Starts react app in production mode
+
+### `npm run build`
 Runs the app in the development mode on [http://localhost:3000]
+<<<<<<< HEAD
 
 >>>>>>> 8ddcdef (Updated readme)
+=======
+>>>>>>> 15bbaf0 (Update README.md)
