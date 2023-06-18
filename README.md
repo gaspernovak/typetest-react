@@ -1,7 +1,7 @@
-<img width="753" alt="image" src="https://github.com/gaspernovak/RPS-Projekt1-Typetest/assets/36790111/f336d8c0-1812-4a53-8b6c-a075ed08308d"># Simple typing test in React
+# Simple typetest in React
 
 ## Description
-This project is a typetest application created for a school class. It is designed to test users' typing speed and accuracy by providing a set of random words to type within a specified time limit. The typetest application is built using React and utilizes Pocketbase for data storage and authentication.
+This project is a typetest application created for a school class. It is designed to test users typing speed and accuracy by providing a set of random words to type within a specified time limit. The typetest application is built using React and utilizes Pocketbase for data storage and authentication.
 
 <img width="753" alt="image" src="https://github.com/gaspernovak/RPS-Projekt1-Typetest/assets/36790111/616d14cd-5bc6-4fd2-8b04-45a8f11f988e">
 
