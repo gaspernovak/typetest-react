@@ -3,7 +3,7 @@
 ## Description
 This project is a typetest application created for a school class. It is designed to test users typing speed and accuracy by providing a set of random words to type within a specified time limit. The typetest application is built using React and utilizes Pocketbase for data storage and authentication.
 
-<img width="753" alt="image" src="https://github.com/gaspernovak/typetest-react/assets/36790111/14a921f6-2238-46e5-89d3-f73560d6dcd0">
+<img width="845" alt="image" src="https://github.com/gaspernovak/typetest-react/assets/36790111/ebb21f88-8595-4ec5-908d-739736cfedb2">
 
 ## Installation
 1. Clone the repository:
